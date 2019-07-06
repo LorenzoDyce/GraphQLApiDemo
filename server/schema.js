@@ -1,4 +1,4 @@
-export default `
+module.exports = `
 type Author {
   id: ID!
   firstName: String!
@@ -18,7 +18,7 @@ type Post {
 
 type Query {
   posts: [Post!]!
-  pot(id: ID!): Post
+  post(id: ID!): Post
   author(id:ID!): Author
   authors:[Author!]!
 }
@@ -26,14 +26,9 @@ type Query {
 
 
 type Mutation {
-  createPost(title:String, content!, authorId: ID!): Post!
+  createPost(title:String, content:String!, authorId: ID!): Post!
   updatePost(id:ID!, title: String, content:String):  [Int!]!
   deletePost(id: ID!): Int!
 }
-
-
-
-
-
 
 `;
