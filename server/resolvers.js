@@ -8,8 +8,8 @@ module.exports = {
   Query: {
     posts: (parent, args, { db }, info) => db.post.findAll(),
     authors: (parent, args, { db }, info) => db.author.findAll(),
-    post: (parent, args, { db }, info) => db.post.findById(id),
-    author: (parent, { id }, { db }, info) => db.author.findById(id)
+    post: (parent, args, { db }, info) => db.post.findByPk(id),
+    author: (parent, { id }, { db }, info) => db.author.findByPk(id)
   },
   Mutation: {
     createPost: (parent, { title, content, authorId }, { db }, info) =>
