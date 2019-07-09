@@ -1,17 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ApolloProvider } from 'react-apollo';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import client from './apollo';
 
-ReactDOM.render(
-  <div>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
-  </div>,
+
+ReactDOM.render(<App />,
   document.getElementById('root')
 );
 
