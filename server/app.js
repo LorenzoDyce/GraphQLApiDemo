@@ -6,6 +6,7 @@ const random = require('lodash.random');
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 const db = require('./models');
+const cors = require('cors');
 
 const server = new ApolloServer({
   typeDefs: gql(typeDefs),
@@ -15,6 +16,9 @@ const server = new ApolloServer({
 
 const app = express();
 server.applyMiddleware({ app });
+
+//allow cross origin requests
+app.use(cors());
 
 db.sequelize.sync().then(() => {
   //populate author table with dummy data
