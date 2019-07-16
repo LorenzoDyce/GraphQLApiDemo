@@ -6,7 +6,6 @@ const random = require('lodash.random');
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 const db = require('./models');
-const cors = require('cors');
 
 const server = new ApolloServer({
   typeDefs: gql(typeDefs),
